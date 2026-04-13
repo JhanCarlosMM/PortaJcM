@@ -12,10 +12,10 @@ type SkillCategory = 'frontend' | 'backend' | 'cloud' | 'devops' | 'tools';
   template: `
     <section id="skills" class="py-20 px-4 md:px-6 bg-gradient-cyber">
       <div class="max-w-6xl mx-auto">
-        <!-- Section Title -->
+        
         <h2 class="section-title">Habilidades Técnicas</h2>
 
-        <!-- Tabs/Categories -->
+        <!-- Tabs/Categorias -->
         <div class="flex flex-wrap gap-2 mb-12 justify-center md:justify-start">
           @for (category of categories(); track category.value) {
             <button

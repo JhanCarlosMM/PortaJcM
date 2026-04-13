@@ -69,7 +69,7 @@ export const THEME_COLORS = {
 // URLs de APIs
 export const API_URLs = {
   github: 'https://api.github.com',
-  // Agrega más URLs según sea necesario
+  
 };
 
 // Mensajes de validación

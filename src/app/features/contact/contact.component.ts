@@ -10,18 +10,18 @@ import { PortfolioService } from '../../services/portfolio.service';
   template: `
     <section id="contact" class="py-20 px-4 md:px-6 bg-gradient-cyber">
       <div class="max-w-4xl mx-auto">
-        <!-- Section Title -->
+       
         <h2 class="section-title">Contacto</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Left side - Info -->
+          
           <div>
             <p class="text-gray-300 mb-8 leading-relaxed">
               ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él. Completa el formulario y
               te contactaré lo antes posible.
             </p>
 
-            <!-- Social Links -->
+            <!-- Links redes sociales -->
             <div class="space-y-4 mb-8">
               @for (link of socialLinks(); track link.name) {
                 <a
@@ -54,7 +54,6 @@ import { PortfolioService } from '../../services/portfolio.service';
               }
             </div>
 
-            <!-- Response time -->
             <div class="glass rounded-lg p-4 border-neon-emerald/30">
               <p class="text-sm text-gray-400 flex items-center gap-2">
                 <span class="w-2 h-2 bg-neon-emerald rounded-full animate-pulse"></span>
@@ -63,10 +62,10 @@ import { PortfolioService } from '../../services/portfolio.service';
             </div>
           </div>
 
-          <!-- Right side - Form -->
+          
           <div>
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
-              <!-- Name -->
+             
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
                   Nombre Completo

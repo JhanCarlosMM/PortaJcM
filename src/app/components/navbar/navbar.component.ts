@@ -21,7 +21,6 @@ import { RouterModule } from '@angular/router';
             </span>
           </div>
 
-          <!-- Links Desktop -->
           <div class="hidden md:flex items-center gap-8">
             <a
               *ngFor="let link of navLinks()"
@@ -35,7 +34,6 @@ import { RouterModule } from '@angular/router';
             </a>
           </div>
 
-          <!-- Mobile Menu Button -->
           <button
             (click)="toggleMobile()"
             class="md:hidden flex flex-col gap-1.5 w-6 h-6 justify-center"

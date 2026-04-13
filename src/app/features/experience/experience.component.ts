@@ -10,28 +10,27 @@ import { Experience } from '../../interfaces/portfolio.interface';
   template: `
     <section id="experience" class="py-20 px-4 md:px-6 bg-cyber-dark">
       <div class="max-w-4xl mx-auto">
-        <!-- Section Title -->
+  
         <h2 class="section-title">Experiencia Profesional</h2>
 
-        <!-- Timeline -->
         <div class="relative">
-          <!-- Timeline line -->
+         
           <div
             class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 md:w-0.5 bg-gradient-to-b from-neon-cyan to-neon-emerald md:-translate-x-1/2"
           ></div>
 
-          <!-- Experience items -->
+       
           @for (exp of experiences(); track exp.title; let isEven = $even) {
             <div
               [class.md:text-right]="isEven"
               class="mb-12 md:mb-8 relative"
             >
-              <!-- Timeline dot -->
+             
               <div
                 class="absolute left-0 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-neon-cyan border-4 border-cyber-dark top-2 md:top-6"
               ></div>
 
-              <!-- Content -->
+              <!-- Contenido -->
               <div
                 [class.md:mr-auto]="isEven"
                 [class.md:ml-auto]="!isEven"

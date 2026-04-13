@@ -51,7 +51,7 @@ export function isDarkModePreferred(): boolean {
 }
 
 /**
- * Genera slug desde texto
+ * Genera pegar desde texto
  */
 export function slugify(text: string): string {
   return text

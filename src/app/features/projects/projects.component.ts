@@ -32,13 +32,13 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
           </button>
         </div>
 
-        <!-- Projects grid -->
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           @for (project of filteredProjects(); track project.id) {
             <div
               class="group glass rounded-xl overflow-hidden hover:shadow-neon-cyan transition-smooth hover:border-neon-cyan/50 cursor-pointer transform hover:scale-105"
             >
-              <!-- Project image/placeholder -->
+          
               <div class="relative h-40 bg-gradient-to-br from-cyber-gray to-cyber-light overflow-hidden">
                 <div
                   class="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-10 transition-opacity"
@@ -66,7 +66,6 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
                 </div>
               </div>
 
-              <!-- Project content -->
               <div class="p-6">
                 <div class="flex items-start justify-between mb-3">
                   <h3 class="text-lg font-bold text-white group-hover:text-neon-cyan transition-smooth">
@@ -83,7 +82,7 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
                   {{ project.description }}
                 </p>
 
-                <!-- Technologies -->
+
                 <div class="flex flex-wrap gap-2 mb-4">
                   @for (tech of project.technologies.slice(0, 3); track tech) {
                     <span
@@ -99,7 +98,7 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
                   }
                 </div>
 
-                <!-- Links -->
+                
                 <div class="flex gap-2 pt-4 border-t border-white/10">
                   @if(project.github) {
                     <a
