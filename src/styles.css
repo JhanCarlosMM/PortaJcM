@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles - Dark Tech Minimalist */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-cyber-dark text-gray-100 font-sans;
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-glass;
+  }
+
+  .glass-hover {
+    @apply glass hover:bg-white/20 transition-all duration-300;
+  }
+
+  /* Neon glow effects */
+  .glow-cyan {
+    @apply shadow-neon-cyan;
+  }
+
+  .glow-emerald {
+    @apply shadow-neon-emerald;
+  }
+
+  .glow-purple {
+    @apply shadow-neon-purple;
+  }
+
+  /* Terminal effect */
+  .terminal-text {
+    @apply font-mono text-sm md:text-base tracking-wide;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Button base styles */
+  .btn {
+    @apply px-6 py-2 rounded-lg font-medium transition-smooth focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-neon-cyan text-cyber-dark hover:shadow-neon-cyan active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply btn glass hover:bg-white/30;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cyber-gray;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neon-cyan rounded-full hover:bg-neon-emerald;
+  }
+}
+
+@layer components {
+  .container-glass {
+    @apply glass p-6 md:p-8 rounded-2xl;
+  }
+
+  .heading-tech {
+    @apply text-4xl md:text-5xl font-bold tracking-tighter;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 flex items-center gap-3;
+  }
+
+  .section-title::before {
+    content: '';
+    @apply w-1 h-10 bg-gradient-neon rounded-full;
+  }
+}
