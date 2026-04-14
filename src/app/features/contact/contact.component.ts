@@ -28,8 +28,7 @@ import { PortfolioService } from '../../services/portfolio.service';
                   [href]="link.url"
                   target="_blank"
                   rel="noopener"
-                  class="flex items-center gap-3 glass rounded-lg p-4 hover:border-neon-cyan/50 hover:bg-white/20 transition-smooth group"
-                >
+                  class="flex items-center gap-3 glass rounded-lg p-4 hover:border-neon-cyan/50 hover:bg-white/20 transition-smooth group">
                   <span class="text-2xl group-hover:scale-110 transition-transform">
                     {{ getSocialIcon(link.icon) }}
                   </span>
@@ -41,8 +40,7 @@ import { PortfolioService } from '../../services/portfolio.service';
                     class="w-5 h-5 text-neon-cyan ml-auto group-hover:translate-x-2 transition-transform"
                     fill="none"
                     stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                    viewBox="0 0 24 24" >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"

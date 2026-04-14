@@ -32,17 +32,15 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
           </button>
         </div>
 
-        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           @for (project of filteredProjects(); track project.id) {
             <div
-              class="group glass rounded-xl overflow-hidden hover:shadow-neon-cyan transition-smooth hover:border-neon-cyan/50 cursor-pointer transform hover:scale-105"
-            >
+              class="group glass rounded-xl overflow-hidden hover:shadow-neon-cyan transition-smooth hover:border-neon-cyan/50 cursor-pointer transform hover:scale-105">
           
               <div class="relative h-40 bg-gradient-to-br from-cyber-gray to-cyber-light overflow-hidden">
                 <div
-                  class="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-10 transition-opacity"
-                ></div>
+                  class="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-10 transition-opacity">
+                </div>
                 <div class="flex items-center justify-center h-full">
                   <span class="text-6xl group-hover:scale-110 transition-transform">
                     @switch(project.category) {
