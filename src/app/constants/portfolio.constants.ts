@@ -6,10 +6,10 @@
 export const PORTFOLIO_INFO = {
   name: 'Jhan Carlos Mancilla',
   title: 'Systems Engineer',
-  subtitle: 'Edition Full | Full Stack Developer',
-  description: 'Especializado en diseño de arquitecturas escalables, cloud computing y soluciones backend/frontend.',
+  subtitle: 'Edition Full | Frontend Developer',
+  description: 'Especializado en diseño de arquitecturas escalables, cloud computing y soluciones frontend.',
   email: 'jhancarlosmena@gmail.com',
-  phone: '+57 000 000 0000',
+  phone: '+57 3117590093',
   location: 'Remote',
   yearsOfExperience: 3,
 };
@@ -23,11 +23,11 @@ export const SOCIAL_LINKS = {
 
 // Stack tecnológico
 export const TECH_STACK = {
-  frontend: ['Angular', 'TypeScript', 'RxJS', 'Tailwind CSS', 'Bootstrap'],
-  backend: ['Node.js', 'Express', 'NestJS'],
-  cloud: ['Azure', 'Google Cloud', 'Docker'],
+  frontend: ['Html5', 'CSS3', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap'],
+  backend: ['Node.js', 'SQL','MySQL'],
+  cloud: ['Azure',],
   devops: ['GitHub Actions', 'Linux'],
-  tools: ['Git', 'VS Code', 'Figma', 'Postman'],
+  tools: ['Git-GitHub', 'VS Code', 'Figma', 'Postman', 'Pstgresql', 'MySQL Workbench'],
 };
 
 // Configuración de animaciones
@@ -57,13 +57,13 @@ export const BREAKPOINTS = {
 
 // Colores del tema
 export const THEME_COLORS = {
-  primary: '#00d9ff',      // Neon Cyan
-  secondary: '#00ff88',    // Neon Emerald
-  accent: '#b100ff',       // Neon Purple
-  danger: '#ff006e',       // Neon Pink
-  background: '#0a0a0a',   // Cyber Dark
-  surface: '#1a1a2e',      // Cyber Gray
-  surfaceLight: '#2d2d44', // Cyber Light
+  primary: '#00d9ff',      
+  secondary: '#00ff88',    
+  accent: '#b100ff',       
+  danger: '#ff006e',       
+  background: '#0a0a0a',   
+  surface: '#1a1a2e',      
+  surfaceLight: '#2d2d44',
 };
 
 // URLs de APIs
@@ -95,9 +95,9 @@ export const FEEDBACK_MESSAGES = {
 // Configuración de SEO
 export const SEO_CONFIG = {
   siteName: 'Jhan Carlos Mancilla - Portfolio',
-  siteUrl: 'https://jcmmena.dev',
-  siteDescription: 'Portafolio profesional de Jhan Carlos Mancilla - Ingeniero de Sistemas, Arquitecto de Nube y Desarrollador Full Stack',
-  socialImage: 'https://jcmmena.dev/og-image.png',
+  siteUrl: 'https://jhancarlosmm.dev',
+  siteDescription: 'Portafolio profesional de Jhan Carlos Mancilla - Ingeniero de Sistemas, Diseño web y Desarrollador Frontend.',
+  socialImage: 'https://jhancarlosmm.dev/og-image.png',
 };
 
 // Categorías de proyectos

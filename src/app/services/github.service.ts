@@ -18,7 +18,7 @@ interface GitHubRepo {
   providedIn: 'root'
 })
 export class GitHubService {
-  private readonly apiUrl = 'https://api.github.com/users';
+  private readonly apiUrl = '';
   private readonly username = 'JhanCarlosMM';
 
   constructor(private http: HttpClient) {}

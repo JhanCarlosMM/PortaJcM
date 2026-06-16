@@ -1,8 +1,4 @@
 /**
- * Utilidades comunes para el portafolio
- */
-
-/**
  * Formatea una fecha al formato deseado
  */
 export function formatDate(date: Date, locale: string = 'es-ES'): string {

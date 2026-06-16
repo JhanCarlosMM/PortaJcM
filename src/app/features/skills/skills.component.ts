@@ -129,7 +129,7 @@ export class SkillsComponent implements OnInit {
     {
       label: 'Years Exp.',
       icon: '📅',
-      count: '3+',
+      count: '2+',
     },
   ]);
 

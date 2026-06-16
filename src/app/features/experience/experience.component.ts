@@ -86,15 +86,39 @@ import { Experience } from '../../interfaces/portfolio.interface';
             <div class="glass rounded-lg p-6 text-center">
               <div class="text-3xl mb-2">🏆</div>
               <h4 class="font-bold text-white mb-2">Certificaciones</h4>
-              <p class="text-sm text-gray-400">Diplomado en Internet</p>
+              <p class="text-sm text-gray-400">Diplomado en Internet de las cosas</p>
               <p class="text-xs text-neon-cyan mt-1">Uniconfacauca</p>
+            </div>
+            <div class="glass rounded-lg p-6 text-center">
+              <div class="text-3xl mb-2">🏆</div>
+              <h4 class="font-bold text-white mb-2">Certificaciones</h4>
+              <p class="text-sm text-gray-400">Diplomado en Uso Potencial de las TIC</p>
+              <p class="text-xs text-neon-cyan mt-1">Universidad Tecnológica de Pereira</p>
+            </div>
+            <div class="glass rounded-lg p-6 text-center">
+              <div class="text-3xl mb-2">🏆</div>
+              <h4 class="font-bold text-white mb-2">Certificaciones</h4>
+              <p class="text-sm text-gray-400">Curso básico de Python</p>
+              <p class="text-xs text-neon-cyan mt-1">Platzi</p>
+            </div>
+            <div class="glass rounded-lg p-6 text-center">
+              <div class="text-3xl mb-2">🏆</div>
+              <h4 class="font-bold text-white mb-2">Certificaciones</h4>
+              <p class="text-sm text-gray-400">Curso Programación Básica</p>
+              <p class="text-xs text-neon-cyan mt-1">Platzi</p>
+            </div>
+            <div class="glass rounded-lg p-6 text-center">
+              <div class="text-3xl mb-2">🏆</div>
+              <h4 class="font-bold text-white mb-2">Certificaciones</h4>
+              <p class="text-sm text-gray-400">Ingles B2</p>
+              <p class="text-xs text-neon-cyan mt-1">Universidad Tecnológica de Pereira</p>
             </div>
 
             <div class="glass rounded-lg p-6 text-center">
               <div class="text-3xl mb-2">🌍</div>
               <h4 class="font-bold text-white mb-2">Idiomas</h4>
               <p class="text-sm text-gray-400">Español • Inglés</p>
-              <p class="text-xs text-neon-cyan mt-1">Nivel fluido</p>
+              <p class="text-xs text-neon-cyan mt-1">Nativo - Básico</p>
             </div>
           </div>
         </div>

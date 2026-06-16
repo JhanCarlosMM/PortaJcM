@@ -40,8 +40,15 @@ import { CommonModule } from '@angular/common';
           </p>
 
           <p class="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Especializado en diseño de arquitecturas escalables, diseño y soluciones
-            frontend. Transformo ideas complejas en sistemas robustos y eficientes.
+            Soy un desarrollador frontend Colombiano, enfocado en la creación de Aplicaciones Web Interactivas. 
+            Cuento con experiencia práctica aplicando tecnologías modernas 
+            como Angular Material, para aplicaciones empresariales que valoran la estabilidad y accesibilidad.
+            Mi perfil se complementa con el manejo Angular, TypeScript, 
+            Además, tengo conocimientos en Azure, y manejo de
+            bases de datos SQL y MySQL, y herramientas esenciales como y Git-GitHub.
+            
+            Me recibí como Ingeniero de Sistemas y continúo
+            capacitándome y adquiriendo nuevos conocimientos por cuenta propia.
           </p>
         </div>
 
@@ -67,10 +74,10 @@ import { CommonModule } from '@angular/common';
                 <span class="text-neon-emerald">$</span> cat stack.txt
               </div>
               <div class="space-y-2 ml-4 text-gray-300 terminal-text">
-                <div>🔷 Angular | TypeScript | JavaScript</div>
+                <div>🔷 Html5 | css3 | TypeScript | JavaScript | Tailwind | Bootstrap</div>
                 <div>🟢 Node.js | Express </div>
-                <div>☁️ AWS | Docker </div>
-                <div>🗄️ PostgreSQL | MongoDB | MySQL</div>
+                <div>☁️ AWS | Azure </div>
+                <div>🗄️ SQL | MySQL</div>
                 <div>
                   @if (terminalCursor()) {
                     <span class="animate-pulse">█</span>

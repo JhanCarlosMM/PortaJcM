@@ -12,10 +12,10 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
   template: `
     <section id="projects" class="py-20 px-4 md:px-6 bg-cyber-dark">
       <div class="max-w-6xl mx-auto">
-        <!-- Section Title -->
+        <!-- Titulo -->
         <h2 class="section-title">Proyectos Destacados</h2>
 
-        <!-- Filter buttons -->
+        <!-- Filtro -->
         <div class="flex flex-wrap gap-3 mb-12 justify-center md:justify-start">
           <button
             *ngFor="let filter of filters()"
