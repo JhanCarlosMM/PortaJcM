@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
           <!-- Logo -->
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 bg-gradient-neon rounded-lg flex items-center justify-center">
-              <span class="text-cyber-dark font-bold text-lg">JC</span>
+              <span class="text-white font-bold text-lg">JC</span>
             </div>
             <span class="text-xl font-bold hidden md:inline">
               <span class="text-neon-cyan">Jhan</span
