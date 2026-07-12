@@ -21,33 +21,19 @@ import { PortfolioService } from '../../services/portfolio.service';
               te contactaré lo antes posible.
             </p>
 
-            <!-- Links redes sociales -->
-            <div class="space-y-4 mb-8">
+            <!-- Links redes sociales: mostrar solo iconos clicables -->
+            <div class="flex items-center gap-3 mb-8">
               @for (link of socialLinks(); track link.name) {
                 <a
-                  [href]="link.url"
+                  [attr.href]="getHref(link.url)"
                   target="_blank"
-                  rel="noopener"
-                  class="flex items-center gap-3 glass rounded-lg p-4 hover:border-neon-cyan/50 hover:bg-white/20 transition-smooth group">
+                  rel="noopener noreferrer"
+                  aria-label="{{ link.name }}"
+                  class="inline-flex flex-col items-center justify-center w-16 glass rounded-lg hover:bg-white/5 transition-smooth group mx-1 p-2">
+                  <span class="text-xs text-gray-300 mb-1">{{ link.name }}</span>
                   <span class="text-2xl group-hover:scale-110 transition-transform">
                     {{ getSocialIcon(link.icon) }}
                   </span>
-                  <div>
-                    <p class="text-sm text-gray-400">{{ link.name }}</p>
-                    <p class="text-neon-cyan font-mono text-sm">{{ link.url.replace('https://', '').replace('mailto:', '') }}</p>
-                  </div>
-                  <svg
-                    class="w-5 h-5 text-neon-cyan ml-auto group-hover:translate-x-2 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24" >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    ></path>
-                  </svg>
                 </a>
               }
             </div>
@@ -225,6 +211,15 @@ export class ContactComponent {
       mail: '✉️',
     };
     return icons[iconName] || '🔗';
+  }
+
+  getHref(url: string): string {
+    if (!url) return '#';
+    // Si es un email sin mailto:, convertirlo
+    if (url.includes('@') && !url.startsWith('mailto:')) {
+      return `mailto:${url}`;
+    }
+    return url;
   }
 
   onSubmit() {
