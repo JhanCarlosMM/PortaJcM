@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <section
       id="hero"
-      class="min-h-screen bg-gradient-cyber flex items-center justify-center pt-20 px-4 overflow-hidden relative"
+      class="min-h-screen bg-gradient-cyber flex items-center justify-center pt-20 px-4 overflow-hidden relative isolate"
     >
      
       <div
@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
         style="animation-delay: 1s"
       ></div>
 
-      <div class="max-w-4xl mx-auto relative z-10">
+      <div class="max-w-4xl mx-auto relative z-10 w-full">
         
         <div class="text-center mb-12">
           <div class="mb-6 inline-block">
