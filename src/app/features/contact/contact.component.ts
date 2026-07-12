@@ -2,6 +2,8 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PortfolioService } from '../../services/portfolio.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { CONTACT_FORM } from '../../constants/portfolio.constants';
 
 @Component({
   selector: 'app-contact',
@@ -31,9 +33,7 @@ import { PortfolioService } from '../../services/portfolio.service';
                   aria-label="{{ link.name }}"
                   class="inline-flex flex-col items-center justify-center w-16 glass rounded-lg hover:bg-white/5 transition-smooth group mx-1 p-2">
                   <span class="text-xs text-gray-300 mb-1">{{ link.name }}</span>
-                  <span class="text-2xl group-hover:scale-110 transition-transform">
-                    {{ getSocialIcon(link.icon) }}
-                  </span>
+                  <span class="text-2xl group-hover:scale-110 transition-transform" [innerHTML]="getSocialIcon(link.icon)"></span>
                 </a>
               }
             </div>
@@ -171,9 +171,10 @@ export class ContactComponent {
   contactForm: FormGroup;
   isSubmitting = signal(false);
   submitSuccess = signal(false);
+  submitError = signal<string | null>(null);
   socialLinks = signal<any[]>([]);
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private sanitizer: DomSanitizer) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -205,12 +206,26 @@ export class ContactComponent {
   }
 
   getSocialIcon(iconName: string): string {
-    const icons: Record<string, string> = {
-      github: '🐙',
-      linkedin: '💼',
-      mail: '✉️',
+    const svgs: Record<string, string> = {
+      github: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true">
+          <path d="M12 .297a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.77-1.35-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0012 .297z" />
+        </svg>
+      `,
+      linkedin: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true">
+          <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm7.5 0h4.78v2.17h.07c.67-1.26 2.3-2.59 4.73-2.59 5.05 0 6 3.33 6 7.67V24h-5V15.5c0-2.02-.04-4.63-2.82-4.63-2.82 0-3.25 2.2-3.25 4.47V24h-5V8z"/>
+        </svg>
+      `,
+      mail: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" aria-hidden="true">
+          <path d="M1.5 4.5h21v15h-21v-15zm2.25 2.25v10.5h16.5V6.75l-8.25 6.375L3.75 6.75z"/>
+        </svg>
+      `,
     };
-    return icons[iconName] || '🔗';
+
+    const svg = svgs[iconName] || `<svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6'><circle cx='12' cy='12' r='10' /></svg>`;
+    return this.sanitizer.bypassSecurityTrustHtml(svg) as any;
   }
 
   getHref(url: string): string {
@@ -222,24 +237,55 @@ export class ContactComponent {
     return url;
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.contactForm.invalid) return;
 
     this.isSubmitting.set(true);
+    this.submitError.set(null);
 
-    // Simular envío
-    setTimeout(() => {
-      console.log('Formulario enviado:', this.contactForm.value);
+    const payload = this.contactForm.value;
+    const endpoint = CONTACT_FORM.endpoint;
+
+    if (!endpoint || endpoint === 'REPLACE_WITH_YOUR_FORMSPREE_OR_GETFORM_ENDPOINT') {
+      console.warn('CONTACT_FORM.endpoint no está configurado. Revisa portfolio.constants.ts');
+      console.log('Formulario (local):', payload);
       this.isSubmitting.set(false);
       this.submitSuccess.set(true);
-
-      // Reset form
       this.contactForm.reset();
+      setTimeout(() => this.submitSuccess.set(false), 5000);
+      return;
+    }
 
-      // Hide success message after 5 seconds
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        this.submitSuccess.set(true);
+        this.contactForm.reset();
+      } else {
+        const text = await res.text();
+        console.error('Error al enviar formulario', res.status, text);
+        this.submitError.set('Error al enviar el formulario. Intenta nuevamente.');
+        this.submitSuccess.set(false);
+      }
+    } catch (err) {
+      console.error('Error de red al enviar formulario', err);
+      this.submitError.set('Error de red. Revisa tu conexión e intenta de nuevo.');
+      this.submitSuccess.set(false);
+    } finally {
+      this.isSubmitting.set(false);
+      // Limpiar mensajes luego de 5s
       setTimeout(() => {
         this.submitSuccess.set(false);
+        this.submitError.set(null);
       }, 5000);
-    }, 1500);
+    }
   }
 }

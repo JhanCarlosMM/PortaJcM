@@ -67,6 +67,12 @@ export const API_URLs = {
   
 };
 
+// Configuración de envío de formulario de contacto (Formspree / Getform)
+export const CONTACT_FORM = {
+  // Reemplaza por tu endpoint de Formspree o Getform, por ejemplo: 'https://formspree.io/f/xxxxxx'
+  endpoint: 'https://formspree.io/f/xwvgegrp',
+};
+
 // Mensajes de validación
 export const VALIDATION_MESSAGES = {
   required: 'Este campo es requerido',
