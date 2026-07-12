@@ -117,13 +117,22 @@ export class PortfolioService {
       technologies: ['Ashure', 'Html5, CSS, JavaScript', 'Node.js'],
     },
     {
-      title: 'Junior Developer',
+      title: 'Desarrollador Junior',
       company: 'Suncolombia S.A.S',
       location: 'Bogotá, Colombia (Remoto)',
       startDate: new Date('2024-05-20'),
       endDate: new Date('2026-06-07'),
       description: 'Colaboré en el desarrollo de plataformas web complejas con Angular y Node.js, y una aplicacion movil en Ionic. Implementé mejoras de rendimiento que redujeron loading time.',
       technologies: ['Angular', 'Node.js', 'MySQL', 'Bootstrap CSS', 'TypeScript', 'Ionic'],
+    },
+    {
+      title: 'Ingeniero de Desarrollo',
+      company: 'Finesa S.A',
+      location: 'Cali, Colombia (Remoto)',
+      startDate: new Date('202-06-16'),
+      endDate: new Date('0000-00-00'),
+      description: 'Apoyo en el equipo de desarrollo Frontend.',
+      technologies: ['Angular', 'Node.js', 'MySQL', 'Bootstrap CSS', 'TypeScript'],
     },
   ]);
 

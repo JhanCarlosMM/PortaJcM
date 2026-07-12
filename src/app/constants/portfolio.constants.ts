@@ -1,8 +1,3 @@
-/**
- * Constantes globales del portafolio
- */
-
-// Información personal
 export const PORTFOLIO_INFO = {
   name: 'Jhan Carlos Mancilla',
   title: 'Systems Engineer',
@@ -119,7 +114,7 @@ export const SKILL_LEVELS = [
 ] as const;
 
 // Versión de la aplicación
-export const APP_VERSION = '1.0.0';
+export const APP_VERSION = '1.1.0';
 
 // Cambio de versión
-export const LAST_UPDATE = new Date('2026-04-11');
+export const LAST_UPDATE = new Date('2026-07-12');
