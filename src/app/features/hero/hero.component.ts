@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
     >
      
       <div
-        class="absolute top-20 right-10 w-72 h-72 bg-neon-cyan/20 rounded-full filter blur-3xl opacity-20 animate-pulse-neon"
+        class="absolute top-20 right-10 w-72 h-72 bg-neon-cyan/20 rounded-full filter blur-3xl opacity-20 md:animate-pulse-neon"
       ></div>
       <div
-        class="absolute bottom-20 left-10 w-72 h-72 bg-neon-purple/20 rounded-full filter blur-3xl opacity-20 animate-pulse-neon"
+        class="absolute bottom-20 left-10 w-72 h-72 bg-neon-purple/20 rounded-full filter blur-3xl opacity-20 md:animate-pulse-neon"
         style="animation-delay: 1s"
       ></div>
 
@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
             <div
               class="px-4 py-2 glass rounded-full text-sm text-neon-cyan font-mono flex items-center gap-2 border border-neon-cyan/30"
             >
-              <span class="animate-pulse">●</span>
+              <span class="md:animate-pulse">●</span>
               Welcome to my portfolio
             </div>
           </div>
@@ -80,7 +80,7 @@ import { CommonModule } from '@angular/common';
                 <div>🗄️ SQL | MySQL</div>
                 <div>
                   @if (terminalCursor()) {
-                    <span class="animate-pulse">█</span>
+                    <span class="md:animate-pulse">█</span>
                   }
                 </div>
               </div>
@@ -111,7 +111,7 @@ import { CommonModule } from '@angular/common';
         
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
           <div class="text-gray-500 text-sm mb-2">Scroll para continuar</div>
-          <div class="flex justify-center animate-bounce">
+          <div class="flex justify-center md:animate-bounce">
             <svg class="w-5 h-5 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
