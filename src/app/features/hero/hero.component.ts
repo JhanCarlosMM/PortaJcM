@@ -110,7 +110,6 @@ import { CommonModule } from '@angular/common';
 
         
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-          <div class="text-gray-500 text-sm mb-2">Scroll para continuar</div>
           <div class="flex justify-center md:animate-bounce">
             <svg class="w-5 h-5 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
