@@ -42,25 +42,33 @@ type ProjectCategory = 'frontend' | 'backend' | 'fullstack' | 'cloud' | 'devops'
                   class="absolute inset-0 bg-gradient-neon opacity-0 group-hover:opacity-10 transition-opacity">
                 </div>
                 <div class="flex items-center justify-center h-full">
-                  <span class="text-6xl group-hover:scale-110 transition-transform">
-                    @switch(project.category) {
-                      @case('frontend') {
-                        🎨
+                  @if (project.image) {
+                    <img
+                      [src]="project.image"
+                      [alt]="project.title"
+                      class="h-full w-full object-contain bg-cyber-light p-2 transition-transform group-hover:scale-105"
+                    />
+                  } @else {
+                    <span class="text-6xl group-hover:scale-110 transition-transform">
+                      @switch(project.category) {
+                        @case('frontend') {
+                          🎨
+                        }
+                        @case('backend') {
+                          ⚙️
+                        }
+                        @case('fullstack') {
+                          🚀
+                        }
+                        @case('cloud') {
+                          ☁️
+                        }
+                        @case('devops') {
+                          🔧
+                        }
                       }
-                      @case('backend') {
-                        ⚙️
-                      }
-                      @case('fullstack') {
-                        🚀
-                      }
-                      @case('cloud') {
-                        ☁️
-                      }
-                      @case('devops') {
-                        🔧
-                      }
-                    }
-                  </span>
+                    </span>
+                  }
                 </div>
               </div>
 
